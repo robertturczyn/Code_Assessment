@@ -3,7 +3,6 @@
 import requests as req
 from bs4 import BeautifulSoup
 import os
-import hashlib
 
 #Prompt for entering website
 webpage = input("Enter full website starting with https://www.: ")
@@ -29,20 +28,6 @@ def my_choice(body):
 f = open("body.txt", "w")
 f.write(my_choice(body))
 f.close()
-
-#Generate checksum of webpage.txt
-#md5_hash = hashlib.md5()
-
-#hashfile = open("body.txt",  "rb")
-#checksum  = hashfile.read()
-#md5_hash.update(checksum)
-
-#cs = md5_hash.hexdigest()
-
-#Create second file containing checksum of webpage.txt
-#f = open("checksum.txt", "w")
-#f.write(cs)
-#f.close()
 
 def sh(checksum):
   os.system("bash -c '%s'" % checksum)
